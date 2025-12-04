@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pre-Project Artist Research</title>
+<style>
+:root {
+  --primary: #ea37a3;
+  --primary-light: #fdf1f5;
+  --secondary: #0a8080;
+  --secondary-light: #f5ffff;
+  --dark: #222;
+  --light: #fff;
+  --grid-light: #e0e0e0;
+  --task: #ea37a3;
+  --task-light: #fdf1f5;
+  --techniques: #0a8080;
+  --techniques-light: #f5ffff;
+  --task-banner: #ffebf5;
+  --techniques-banner: #e6ffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Typewriter Condensed", "Courier New", monospace;
+  background-image:
+    linear-gradient(var(--grid-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-light) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px;
+  background-attachment: fixed;
+  color: var(--dark);
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1000px;
+  width: 95%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.97);
+  border: 3px solid var(--primary);
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: "Typewriter Condensed", "Courier New", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8em;
+}
+
+h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 15px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--secondary);
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 25px;
+  background: var(--primary);
+  margin-right: 15px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+  font-size: 1.1rem;
+}
+
+p, li, a, h3, h4 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Banner */
+.section-banner {
+  margin: 25px 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--task-banner);
+  border: 2px solid var(--task);
+  color: var(--task);
+}
+
+.section-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background-color: var(--task);
+}
+
+/* Artist example display */
+.artist-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+  .artist-display {
+    grid-template-columns: 1fr;
+  }
+}
+
+.artist-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 2px solid var(--primary-light);
+}
+
+.artist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-color: var(--primary);
+}
+
+.artist-header {
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.artist-content {
+  padding: 20px;
+}
+
+.artist-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 2px solid #eee;
+}
+
+.artist-info p {
+  margin-bottom: 15px;
+}
+
+.artist-info h4 {
+  color: var(--primary);
+  margin: 15px 0 10px 0;
+  font-size: 1.1rem;
+}
+
+/* Examples gallery */
+.examples-gallery {
+  margin: 40px 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.example-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+
+.example-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border-color: var(--primary);
+}
+
+.example-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.example-desc {
+  padding: 15px;
+  background: white;
+}
+
+.example-title {
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+/* Task requirements box */
+.requirements-box {
+  background: var(--primary-light);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 0;
+  border-left: 5px solid var(--primary);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.requirements-box h3 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.requirements-list {
+  margin-left: 25px;
+}
+
+.requirements-list li {
+  margin-bottom: 12px;
+}
+
+/* Citation box */
+.citation-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 25px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 2px solid var(--secondary);
+}
+
+.citation-box h3 {
+  color: var(--secondary);
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed var(--secondary);
+  padding-bottom: 10px;
+}
+
+.citation-example {
+  background: var(--secondary-light);
+  padding: 12px;
+  border-radius: 5px;
+  margin: 15px 0;
+  font-family: monospace;
+  font-size: 0.95rem;
+  border-left: 4px solid var(--secondary);
+}
+
+/* Steps box */
+.workflow-box {
+  background: #f8f8f8;
+  margin: 35px 0;
+  border-radius: 15px;
+  border: 3px solid var(--secondary);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.workflow-header {
+  background: var(--secondary);
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.workflow-header h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.workflow-steps {
+  padding: 20px 25px;
+}
+
+.step {
+  position: relative;
+  padding: 20px 20px 20px 50px;
+  background: white;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.step-title {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.step-content ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.step-content li {
+  margin-bottom: 8px;
+}
+
+/* Checklist */
+.checklist {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 2px solid var(--primary);
+}
+
+.checklist h3 {
+  color: var(--primary);
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed var(--primary);
+  padding-bottom: 10px;
+}
+
+.checklist-item {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.checklist-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  margin-right: 15px;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.checklist-checkbox.checked::after {
+  content: "✓";
+  position: absolute;
+  color: var(--primary);
+  font-size: 20px;
+  top: -4px;
+  left: 4px;
+  font-weight: bold;
+}
+
+.checklist-text {
+  flex-grow: 1;
+}
+
+.checklist-label {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Submission box */
+.submission-box {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 40px 0 20px 0;
+  border: 3px dashed var(--primary);
+  text-align: center;
+}
+
+.submission-box h3 {
+  color: var(--primary);
+  margin-top: 0;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.submission-date {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 15px 0;
+  color: var(--primary);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  overflow: auto;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 1001;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Print button */
+.print-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.print-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+@media print {
+  .print-button {
+    display: none;
+  }
+  
+  body {
+    background: white;
+  }
+  
+  .container {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Pre-Project Artist Research</h1>
+  
+  <div class="section-banner">
+    RESEARCH TASK: FINDING ARTISTS FOR YOUR PROJECT
+  </div>
+
+  <div class="artist-display">
+    <div class="artist-card">
+      <div class="artist-header">
+        Example: William Larson
+      </div>
+      <div class="artist-content">
+        <img src="larson_example.jpg" alt="William Larson artwork example" class="artist-image" onclick="openModal(this.src)">
+        
+        <p>William Larson is an American photographer who has influenced the photographic world</p>
+        
+        <p>FireFlies series 1971</p>
+
+        <h4>Pre-project preparation</h4>
+      </div>
+    </div>
+    
+    <div class="artist-card">
+      <div class="artist-header">
+        Research Requirements
+      </div>
+      <div class="artist-content">
+        <ul class="requirements-list">
+          <li>Research TWO artists to develop a research page</li>
+          <li>Source quotes and use Harvard referencing</li>
+          <li>Focus on artists that relate to your topic</li>
+          <li>NAME/DATE/TITLE OF WORK</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="examples-gallery">
+    <h2>Student Examples</h2>
+    
+    <div class="gallery-grid">
+      <div class="example-item">
+        <img src="student_example1.jpg" alt="Student research page example 1" class="example-image" onclick="openModal(this.src)">
+        <div class="example-desc">
+          <div class="example-title">Student Example 1</div>
+        </div>
+      </div>
+      
+      <div class="example-item">
+        <img src="student_example2.jpg" alt="Student research page example 2" class="example-image" onclick="openModal(this.src)">
+        <div class="example-desc">
+          <div class="example-title">Student Example 2</div>
+        </div>
+      </div>
+      
+      <div class="example-item">
+        <img src="student_example3.jpg" alt="Student research page example 3" class="example-image" onclick="openModal(this.src)">
+        <div class="example-desc">
+          <div class="example-title">Student Example 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="workflow-box">
+    <div class="workflow-header">
+      <h3>Research Process</h3>
+    </div>
+    <div class="workflow-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-title">Identify Your Project Theme</div>
+        <div class="step-content">
+          <ul>
+            <li>What is your project about?</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-title">Find Two Relevant Artists</div>
+        <div class="step-content">
+          <ul>
+            <li>Find artists who work with similar subject matter</li>
+            <li>Look for artists exploring similar concepts</li>
+            <li>Search gallery websites, museum collections, and art books</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-title">Collect Information & Quotes</div>
+        <div class="step-content">
+          <ul>
+            <li>Gather basic information about each artist</li>
+            <li>Find meaningful quotes about or by the artists</li>
+            <li>Download high-quality images of their work</li>
+            <li>Note all source information for proper citations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="citation-box">
+    <h3>Harvard Referencing Guide</h3>
+    
+    <h4>Artwork Citation Format:</h4>
+    <div class="citation-example">
+      Surname, Initial. (Year) Title [Medium]
+    </div>
+    
+    <h4>Examples:</h4>
+    <ul>
+      <li>Larson, W. (1973) Transmuted By Picnic [Electro-carbon print]</li>
+      <li>Kusama, Y. (2016) Infinity Mirrors [Installation]</li>
+      <li>Sherman, C. (1981) Untitled #96 [Photograph]</li>
+    </ul>
+    
+    <h4>Quote Citation Format:</h4>
+    <div class="citation-example">
+      "Quote text" (Surname, Year, p.X)
+    </div>
+    
+    <h4>Examples:</h4>
+    <ul>
+      <li>"My art originates from hallucinations only I can see." (Kusama, 2002, p.23)</li>
+      <li>For online sources without page numbers, omit the page reference.</li>
+    </ul>
+  </div>
+  
+  <div class="requirements-box">
+    <h3>Research Requirements</h3>
+    <p>Your research should include these key elements:</p>
+    <ol class="requirements-list">
+      <li>Find two artists that relate to your project topic</li>
+      <li>Collect key information about each artist</li>
+      <li>Find meaningful quotes about their work</li>
+      <li>Use Harvard referencing for all sources</li>
+    </ol>
+  </div>
+  
+  <div class="checklist">
+    <h3>Research Checklist</h3>
+    
+    <div class="checklist-item">
+      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
+      <div class="checklist-text">
+        <div class="checklist-label">Found first artist relevant to my project</div>
+      </div>
+    </div>
+    
+    <div class="checklist-item">
+      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
+      <div class="checklist-text">
+        <div class="checklist-label">Found second artist relevant to my project</div>
+      </div>
+    </div>
+    
+    <div class="checklist-item">
+      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
+      <div class="checklist-text">
+        <div class="checklist-label">Collected quotes about or from the artists</div>
+      </div>
+    </div>
+    
+    <div class="checklist-item">
+      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
+      <div class="checklist-text">
+        <div class="checklist-label">Added Harvard references for all sources</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="submission-box">
+    <h3>Research Preparation</h3>
+    <p>Complete your artist research</p>
+    <p>Be ready to discuss your findings in class</p>
+    <div class="submission-date">Due: Next class</div>
+  </div>
+  
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+</div>
+
+<button class="print-button" onclick="window.print()">🖨️</button>
+
+<script>
+// Modal functionality
+function openModal(src) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  modal.style.display = "block";
+  modalImg.src = src;
+}
+
+// Close modal when clicking the × symbol
+document.getElementsByClassName('close')[0].onclick = function() {
+  document.getElementById('imageModal').style.display = "none";
+}
+
+// Close modal when clicking outside the image
+window.onclick = function(event) {
+  const modal = document.getElementById('imageModal');
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Toggle checklist items
+function toggleChecked(element) {
+  element.classList.toggle('checked');
+  
+  // Save state to localStorage
+  const checkboxes = document.querySelectorAll('.checklist-checkbox');
+  const states = Array.from(checkboxes).map(checkbox => checkbox.classList.contains('checked'));
+  localStorage.setItem('artist-research-checklist', JSON.stringify(states));
+}
+
+// Load saved checklist state
+document.addEventListener('DOMContentLoaded', function() {
+  const savedStates = localStorage.getItem('artist-research-checklist');
+  
+  if (savedStates) {
+    const states = JSON.parse(savedStates);
+    const checkboxes = document.querySelectorAll('.checklist-checkbox');
+    
+    checkboxes.forEach((checkbox, index) => {
+      if (index < states.length && states[index]) {
+        checkbox.classList.add('checked');
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
