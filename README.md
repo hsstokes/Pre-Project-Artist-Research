@@ -1,0 +1,2 @@
+# Pre-Project-Artist-Research
+RESEARCH TASK: FINDING ARTISTS FOR YOUR PROJECT
